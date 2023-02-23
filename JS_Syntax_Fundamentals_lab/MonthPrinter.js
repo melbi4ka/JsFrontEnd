@@ -37,13 +37,11 @@ function solve(number) {
     case 12:
       month = "December";
       break;
+    default:
+      month = "Error!";
   }
 
-  if (month != "") {
-    console.log(`${month}`);
-  } else {
-    console.log(`Error!`);
-  }
+  console.log(month);
 }
 
 solve(2);
