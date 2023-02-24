@@ -1,8 +1,8 @@
-function findHashTag(sentеnce) {
-  let sentеnceArr = sentеnce.split(" ");
+function findHashTag(sentence) {
+  let sentenceArr = sentence.split(" ");
   // console.log(sentanceArr);
 
-  for (const el of sentеnceArr) {
+  for (const el of sentenceArr) {
     if (el.startsWith("#") && el.length !== 1) {
       let onlyLetters = true;
       for (let i = 1; i < el.length; i++) {
