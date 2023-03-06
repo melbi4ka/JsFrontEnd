@@ -1,4 +1,4 @@
-function oddOccurences(string) {
+function oddOccurrences(string) {
   let arr = string.split(" ");
   let arrLower = [];
 
@@ -29,5 +29,5 @@ function oddOccurences(string) {
   console.log(result);
 }
 
-oddOccurences("Java C# Php PHP Java PhP 3 C# 3 1 5 C#");
-oddOccurences("Cake IS SWEET is Soft CAKE sweet Food");
+oddOccurrences("Java C# Php PHP Java PhP 3 C# 3 1 5 C#");
+oddOccurrences("Cake IS SWEET is Soft CAKE sweet Food");
