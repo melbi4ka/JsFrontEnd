@@ -6,7 +6,7 @@ function picollo(arr) {
       carParking.set(carNumber, 1);
     }
     if (action === "OUT") {
-      carParking.delete(carNumber, 0);
+      carParking.delete(carNumber);
     }
   }
 
