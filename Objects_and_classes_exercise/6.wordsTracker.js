@@ -20,18 +20,35 @@ function wordsTracker(arr) {
     if (found) {
       console.log(word, "-", wordsCountSort[word]);
     }
-
-    // find if key(word) is in searched with .find
-    // if key is in searched console.log
   }
+
+  //     // find if key(word) is in searched with .find
+  //     // if key is in searched console.log
+  //   }
+  //   console.log(wordsCountSort);
+  //   for (const word in wordsCountSort) {
+  //     for (const search of searched) {
+  //       if (word === search) {
+  //         console.log(word, "-", wordsCountSort[word]);
+  //       }
+  //     }
+  //     // const found = searched.find((element) => element === word);
+  //     // if (found) {
+  //     //   console.log(word, "-", wordsCountSort[word]);
+  //     // }
+
+  //     // find if key(word) is in searched with .find
+  //     // if key is in searched console.log
+  //   }
 }
 
 // 40/100
 
 wordsTracker([
-  "this sentencees",
+  "this sentence",
   "In",
   "this",
+  "sentence",
   "sentence",
   "you",
   "have",
@@ -55,6 +72,9 @@ wordsTracker([
   "is the",
   "first",
   "sentence",
+  "is",
+  "is",
+
   "Here",
   "is",
   "another",
