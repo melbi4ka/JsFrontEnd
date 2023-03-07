@@ -1,0 +1,45 @@
+function sequences(arr) {
+  let mySet = new Set();
+  for (let el of arr) {
+    el = JSON.parse(el);
+    el.sort((a, b) => b - a);
+    let joinEl = el.join("|");
+
+    // console.log(typeof el);
+    // console.log(joinEl);
+    // console.log(el.sort((a, b) => a - b));
+    mySet.add(joinEl);
+  }
+
+  //   console.log(mySet);
+  const iterator1 = mySet.entries();
+  //   console.log(iterator1);
+  //   const iteratorSorted = iterator1.keys().sort((a, b) => a.length - b.length);
+
+  let finalResult = [];
+
+  for (const entry of iterator1) {
+    // console.log(entry);
+    let entryArr = entry[0].split("|").map(Number);
+    finalResult.push(entryArr);
+  }
+
+  finalResult.sort((a, b) => a.length - b.length);
+  finalResult.forEach((el) => console.log(`[${el.join(", ")}]`));
+
+  //   for (let arr of finalResult) {
+  //     console.log(`[${arr.join(", ")}]`);
+  //   }
+}
+
+sequences([
+  "[-3, -2, -1, 0, 1, 2, 3, 4]",
+  "[10, 1, -17, 0, 2, 13]",
+  "[4, -3, 3, -2, 2, -1, 1, 0]",
+]);
+
+// sequences([
+//   "[7.14, 7.180, 7.339, 80.099]",
+//   "[7.339, 80.0990, 7.140000, 7.18]",
+//   "[7.339, 7.180, 7.14, 80.099]",
+// ]);
