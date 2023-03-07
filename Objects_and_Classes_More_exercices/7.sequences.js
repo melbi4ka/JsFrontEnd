@@ -1,35 +1,23 @@
 function sequences(arr) {
   let mySet = new Set();
   for (let el of arr) {
-    el = JSON.parse(el);
-    el.sort((a, b) => b - a);
-    let joinEl = el.join("|");
-
-    // console.log(typeof el);
-    // console.log(joinEl);
-    // console.log(el.sort((a, b) => a - b));
-    mySet.add(joinEl);
+    el = JSON.parse(el); //return arr
+    el.sort((a, b) => b - a); //sort arr desc
+    let joinEl = el.join("|"); // arr to string
+    mySet.add(joinEl); //add to set
   }
 
-  //   console.log(mySet);
-  const iterator1 = mySet.entries();
-  //   console.log(iterator1);
-  //   const iteratorSorted = iterator1.keys().sort((a, b) => a.length - b.length);
+  const iterator1 = mySet.entries(); //iterator from set
 
   let finalResult = [];
 
   for (const entry of iterator1) {
-    // console.log(entry);
     let entryArr = entry[0].split("|").map(Number);
     finalResult.push(entryArr);
   }
 
   finalResult.sort((a, b) => a.length - b.length);
   finalResult.forEach((el) => console.log(`[${el.join(", ")}]`));
-
-  //   for (let arr of finalResult) {
-  //     console.log(`[${arr.join(", ")}]`);
-  //   }
 }
 
 sequences([
