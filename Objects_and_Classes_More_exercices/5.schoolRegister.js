@@ -2,29 +2,28 @@ function register(arr) {
   let studentsRegister = {};
 
   for (const el of arr) {
-    let [names, grade, score] = el.split(", ");
+    const [names, grade, score] = el.split(", ");
     const studentName = names.split(": ")[1];
     const studentGrade = Number(grade.split(": ")[1]);
     const studentScore = Number(score.split(": ")[1]);
     if (studentScore >= 3 && !studentsRegister[studentGrade]) {
       studentsRegister[studentGrade] = {
         name: [studentName],
-        score: [studentScore],
+        score: studentScore,
       };
     } else if (studentScore >= 3 && studentsRegister[studentGrade]) {
       studentsRegister[studentGrade].name.push(studentName);
-      studentsRegister[studentGrade].score.push(studentScore);
+      studentsRegister[studentGrade].score += studentScore;
     }
   }
 
   for (const el in studentsRegister) {
-    let newYear = Number(el) + 1;
+    const newYear = Number(el) + 1;
     console.log(newYear, "Grade");
-    let listOfStudents = studentsRegister[el].name.join(", ");
+    const listOfStudents = studentsRegister[el].name.join(", ");
     console.log(`List of students: ${listOfStudents}`);
-    let annualScore =
-      studentsRegister[el].score.reduce((a, b) => a + b, 0) /
-      studentsRegister[el].score.length;
+    const annualScore =
+      studentsRegister[el].score / studentsRegister[el].name.length;
     console.log(
       `Average annual score from last year: ${annualScore.toFixed(2)}`,
       "\n"
