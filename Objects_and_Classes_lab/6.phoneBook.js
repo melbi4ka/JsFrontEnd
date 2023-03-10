@@ -1,5 +1,4 @@
 function phoneBook(args) {
-  //   console.log(args);
   const personPhones = {};
 
   for (const el of args) {

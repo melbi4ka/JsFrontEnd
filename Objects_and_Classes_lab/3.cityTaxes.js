@@ -1,5 +1,5 @@
 function cityTaxes(...args) {
-  //   console.log(args);
+ 
   const cityProps = {
     name: args[0],
     population: args[1],
@@ -18,10 +18,6 @@ function cityTaxes(...args) {
       return (this.treasury -= this.treasury * (percentage / 100));
     },
   };
-  //   console.log(Object.keys(cityProps));
-  //   for (let el of Object.entries(cityProps)) {
-  //     console.log(el);
-  //   }
 
   return cityProps;
 }

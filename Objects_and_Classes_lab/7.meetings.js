@@ -1,5 +1,4 @@
 function meetings(args) {
-  //   console.log(args);
   let meetingAppointments = {};
   let result = "";
 

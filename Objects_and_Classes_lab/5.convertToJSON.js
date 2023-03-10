@@ -1,6 +1,4 @@
 function convertToJson(...args) {
-  //   console.log(args);
-
   const person = {
     name: args[0],
     lastName: args[1],
