@@ -2,15 +2,15 @@ function bookShelf(arr) {
   let genresById = {};
   for (const el of arr) {
     if (el.includes("->")) {
-      [id, genre] = el.split(" -> ");
+      const [id, genre] = el.split(" -> ");
       if (!genresById.hasOwnProperty(id)) {
         genresById[id] = { genre, books: [] };
       }
     }
 
     if (el.includes(":")) {
-      [title, others] = el.split(": ");
-      [author, bookGenre] = others.split(", ");
+      const [title, others] = el.split(": ");
+      const [author, bookGenre] = others.split(", ");
       for (const val of Object.values(genresById)) {
         if (val.genre === bookGenre) {
           val.books.push([title, author]);
