@@ -96,4 +96,5 @@ test.js
 usefulLinks.txt 
 6.wordsTrackerSec.js
 text.js
-DOM_advanced
+DOM_advanced_introduction
+DOM_advanced_events
