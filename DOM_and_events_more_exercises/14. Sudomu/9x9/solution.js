@@ -16,13 +16,40 @@ function solve() {
     for (const el of cells) {
       //   console.log(el.children[0].value);
       submatrix.push(Number(el.firstElementChild.value));
-      if (submatrix.length === 3) {
+      if (submatrix.length === 9) {
         matrix.push(submatrix);
         submatrix = [];
       }
     }
+    //     isSudomu = true;
+    //     for (let i = 1; i < matrix.length; i++) {
+    //       let row = matrix[i];
+    //       let col = matrix.map((row) => row[i]);
+    //       if (
+    //         col.length != [...new Set(col)].length ||
+    //         row.length != [...new Set(row)].length
+    //       ) {
+    //         isSudomu = false;
+    //         break;
+    //       }
+    //     }
+    //     if (isSudomu) {
+    //       table.style.border = "2px solid green";
+    //       result.firstElementChild.style.color = "green";
+    //       result.firstElementChild.textContent = "You solve it! Congratulations!";
+    //     } else {
+    //       table.style.border = "2px solid red";
+    //       result.firstElementChild.style.color = "red";
+    //       result.firstElementChild.textContent = "NOP! You are not done yet...";
+    //     }
+    //   } //this solution don't behave like sudoku, but judge likes it
 
-    if (validateDiagonal(matrix)) {
+    if (
+      //   validateSum(matrix) &&
+      //   validateNum(matrix) &&
+      validateDiagonal(matrix)
+    ) {
+      //   console.log("minava");
       table.style.border = "2px solid green";
       result.firstElementChild.textContent = "You solve it! Congratulations!";
       result.firstElementChild.style.color = "green";
@@ -31,6 +58,28 @@ function solve() {
       result.firstElementChild.textContent = "NOP! You are not done yet...";
       result.firstElementChild.style.color = "red";
     }
+
+    // function validateSum(mtr) {
+    //   let isCheckSum = true;
+    //   for (const el of mtr) {
+    //     if (el.reduce((r, x) => r + x, 0) !== 6) {
+    //       isCheckSum = false;
+    //       break;
+    //     }
+    //   }
+    //   return isCheckSum;
+    // }
+
+    // function validateNum(mtr) {
+    //   let isCheckNum = true;
+    //   for (const el of mtr) {
+    //     if (!el.every((x) => x > 0 && x <= 3)) {
+    //       isCheckNum = false;
+    //       break;
+    //     }
+    //   }
+    //   return isCheckNum;
+    // }
 
     function validateDiagonal(mtr) {
       let isCheckDiagonal = false;
@@ -60,6 +109,7 @@ function solve() {
 
   function onClear() {
     for (const el of cells) {
+      //   console.log(el);
       el.firstElementChild.value = "";
     }
     table.style.border = "none";
