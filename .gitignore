@@ -99,3 +99,6 @@ text.js
 DOM_advanced_introduction
 DOM_advanced_events
 08. Furniture
+package-lock.json
+*.zip
+node_modules
