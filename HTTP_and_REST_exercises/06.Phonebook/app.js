@@ -34,7 +34,7 @@ function attachEvents() {
       const data = await phoneRes.json();
       //   console.log(data);
       const dataRes = Object.values(data);
-      //   console.log(dataRes);
+
       ul.innerHTML = "";
       for (const el of dataRes) {
         const li = document.createElement("li");

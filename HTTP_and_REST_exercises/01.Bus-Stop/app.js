@@ -18,7 +18,6 @@ function getInfo() {
         li.textContent = `Bus ${el} arrives in ${buses[el]} minutes`;
         ul.appendChild(li);
       }
-      //   console.log(data);
     })
     .catch((error) => {
       busStop.textContent = "Error";
