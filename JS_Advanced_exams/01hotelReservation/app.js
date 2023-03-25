@@ -10,11 +10,11 @@ function solve() {
 
   function onClick(e) {
     e.preventDefault();
+
     mapper = {};
     inputs.forEach((input) => {
       mapper[input.id] = input.value;
     });
-    console.log(mapper);
 
     for (const el in mapper) {
       if (mapper[el] === "") {
@@ -28,7 +28,6 @@ function solve() {
         }
       }
     }
-
     //type, classNameList, parentEl, textcont, src
     const li = createElement("li", ["reservation-content"], ul);
     const article = createElement("article", "", li);
@@ -40,7 +39,6 @@ function solve() {
     );
     createElement("p", "", article, `From date: ${mapper["date-in"]}`);
     createElement("p", "", article, `To date: ${mapper["date-out"]}`);
-
     createElement("p", "", article, `For ${mapper["people-count"]} people`);
     const editBtn = createElement("button", ["edit-btn"], li, "Edit");
     const continueBtn = createElement(
@@ -68,26 +66,24 @@ function solve() {
     continueBtn.addEventListener("click", () => {
       editBtn.remove();
       continueBtn.remove();
+
+      const cancelBtn = createElement("button", ["cancel-btn"], li, "Cancel");
+      cancelBtn.addEventListener("click", () => {
+        h1.textContent = "Cancelled.";
+        h1.className = "reservation-cancelled";
+        nextBtn.disabled = false;
+        li.remove();
+      });
+
       const confirmBtn = createElement(
         "button",
         ["confirm-btn"],
         li,
         "Confirm"
       );
-
-      const cancelBtn = createElement("button", ["cancel-btn"], li, "Cancel");
-      cancelBtn.addEventListener("click", () => {
-        h1.textContent = "Cancelled.";
-        h1.className = "reservation-cancelled";
-
-        nextBtn.disabled = false;
-        li.remove();
-      });
-
       confirmBtn.addEventListener("click", () => {
         h1.textContent = "Confirmed.";
         h1.className = "reservation-confirmed";
-
         nextBtn.disabled = false;
         li.remove();
       });
@@ -95,8 +91,6 @@ function solve() {
       li.remove();
       ulConfirm.appendChild(li);
     });
-
-    continueBtn.onclick = () => {};
   }
 
   function createElement(type, classNameList, parentEl, textcont, src) {
