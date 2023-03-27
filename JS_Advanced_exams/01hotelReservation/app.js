@@ -28,6 +28,7 @@ function solve() {
         }
       }
     }
+
     //type, classNameList, parentEl, textcont, src
     const li = createElement("li", ["reservation-content"], ul);
     const article = createElement("article", "", li);
