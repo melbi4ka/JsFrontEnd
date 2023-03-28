@@ -99,8 +99,8 @@ function attachEvents() {
       console.error(error);
       forecast.style.display = "block";
 
-      forecast.removeChild(upcoming);
-      console.log(forecast.firstElementChild.firstElementChild);
+      upcoming.remove();
+      // console.log(forecast.firstElementChild.firstElementChild);
       forecast.firstElementChild.firstElementChild.textContent = "Error";
     }
   }
