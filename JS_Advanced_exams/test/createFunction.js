@@ -1,4 +1,4 @@
-function oncreateElement(type, classNameList, parentEl, textcont, others) {
+function onCreateElement(type, classNameList, parentEl, textcont, others) {
   let newEl = document.createElement(type);
   if (type === "input" && textcont !== "") {
     newEl.value = textcont;
