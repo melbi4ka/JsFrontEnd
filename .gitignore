@@ -102,3 +102,5 @@ DOM_advanced_events
 package-lock.json
 *.zip
 node_modules
+test
+restHouse.js
