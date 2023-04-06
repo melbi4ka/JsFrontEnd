@@ -7,6 +7,7 @@ function solve() {
   const table = document.querySelector("#table-body");
   const ul = document.querySelector("#cars-list");
   const profit = document.querySelector("#profit");
+  const form = document.querySelector("form ");
   console.log(table);
   publishBtn.addEventListener("click", onClick);
   let totalprofit = 0;
