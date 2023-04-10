@@ -12,7 +12,7 @@ function lockedProfile() {
   async function getProfile() {
     const response = await fetch(BASE_URL);
     const data = await response.json();
-    console.log(data);
+    // console.log(data);
     // let newData = Object.values(data);
 
     // console.log(newData);
